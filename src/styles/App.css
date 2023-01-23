@@ -11,172 +11,82 @@ body {
 
 @keyframes bg-animation {
   0% {
-    background-position: left
+    background-position: left;
   }
 
   50% {
-    background-position: right
+    background-position: right;
   }
 
   100% {
-    background-position: left
+    background-position: left;
   }
 }
 
+.dupa {
+  display: table;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 624px;
+  width: 1272px;
   display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-template-rows: repeat(2, 300px);
+  grid-column-gap: 28px;
+  grid-row-gap: 24px;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+.big-card {
+  width: 628px;
+  height: 300px;
+}
+
+.small-card {
+  width: 300px;
+  height: 300px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.07);
+  border-radius: 37px;
+  -webkit-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.25);
   margin: auto;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 3fr 3fr;
-  gap: 0px 0px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 300;
 }
 
 .title-card {
   grid-column: span 2;
-  margin: auto;
-  background-color: rgba(255, 255, 255, 0.20);
-  padding: 4rem;
-  height: 40%;
-  width: 80%;
-  border-radius: 25px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
 }
 
-.title-card:hover {
+.about-card:hover,
+.cv-card:hover,
+.projects-card:hover,
+.contact-card:hover {
   cursor: pointer;
 }
 
 .name {
   text-align: center;
   font-size: 3rem;
-}
-
-.job {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 300;
-}
-
-.about-card {
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.20);
-  padding: 4rem;
-  height: 40%;
-  width: 60%;
-  border-radius: 25px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-}
-
-.about-card:hover {
-  cursor: pointer;
-}
-
-.about {
-  text-align: center;
-  font-size: 2.2rem;
-}
-
-.cv-card {
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.20);
-  padding: 4rem;
-  height: 40%;
-  width: 60%;
-  border-radius: 25px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-}
-
-.cv-card:hover {
-  cursor: pointer;
-}
-
-.cv {
-  text-align: center;
-  font-size: 2.2rem;
-}
-
-.projects-card {
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.20);
-  padding: 4rem;
-  height: 40%;
-  width: 60%;
-  border-radius: 25px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-}
-
-.projects-card:hover {
-  cursor: pointer;
-}
-
-.projects {
-  text-align: center;
-  font-size: 2.2rem;
-}
-
-.contact-card {
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.20);
-  padding: 4rem;
-  height: 40%;
-  width: 60%;
-  border-radius: 25px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-}
-
-.contact-card:hover {
-  cursor: pointer;
-}
-
-.contact {
-  text-align: center;
-  font-size: 2.2rem;
-}
-
-.skills-card {
-  display: flex;
-  grid-column: span 2;
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.20);
-  padding: 4rem;
-  height: 40%;
-  width: 80%;
-  border-radius: 25px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.23);
-}
-
-.skills-card:hover {
-  cursor: pointer;
-}
-
-.skills {
-  text-align: center;
-  font-size: 2.2rem;
 }
