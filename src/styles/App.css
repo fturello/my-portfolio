@@ -1,34 +1,40 @@
-:root {
-  --gradient: linear-gradient(130deg, #5c52ee, purple, #ee6352);
-}
-
 body {
-  background-image: var(--gradient);
-  background-size: 200%;
-  animation: bg-animation 25s infinite;
+  background-color: #24144c;
   color: rgba(255, 255, 255, 0.87);
+  overflow: hidden;
 }
 
-@keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-
-  50% {
-    background-position: right;
-  }
-
-  100% {
-    background-position: left;
-  }
+.background {
+  filter: blur(100px);
+  -webkit-filter: blur(100px);
 }
 
-.dupa {
-  display: table;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.blob {
+  position: absolute;
+}
+
+.blob1 {
+  left: -23px;
+  top: 429px;
+  animation: blob1 10s infinite;
+}
+
+.blob2 {
+  left: -44px;
+  top: -365px;
+  animation: blob2 10s infinite;
+}
+
+.blob3 {
+  left: 719px;
+  top: 120px;
+  animation: blob3 10s infinite;
+}
+
+.blob4 {
+  left: 1125px;
+  top: -305px;
+  animation: blob4 10s infinite;
 }
 
 .container {
@@ -36,16 +42,16 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 624px;
-  width: 1272px;
+  /* height: 624px;
+  width: 1272px; */
   display: grid;
   grid-template-columns: repeat(4, 300px);
   grid-template-rows: repeat(2, 300px);
   grid-column-gap: 28px;
   grid-row-gap: 24px;
-  justify-content: center;
-  justify-items: center;
-  margin: 0 auto;
+  /* justify-content: center; */
+  /* justify-items: center; */
+  /* margin: 0 auto; */
 }
 
 .big-card {
@@ -60,6 +66,7 @@ body {
 
 .card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.07);
@@ -67,10 +74,6 @@ body {
   -webkit-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.25);
-  margin: auto;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   font-size: 38px;
   font-weight: 300;
 }
@@ -79,6 +82,7 @@ body {
   grid-column: span 2;
 }
 
+.big-card:hover,
 .about-card:hover,
 .cv-card:hover,
 .projects-card:hover,
@@ -87,6 +91,93 @@ body {
 }
 
 .name {
-  text-align: center;
-  font-size: 3rem;
+  font-size: 48px;
+}
+
+@keyframes blob1 {
+  0% {
+    left: -23px;
+    top: 429px;
+  }
+
+  33% {
+    left: -68px;
+    top: -46px;
+  }
+
+  66% {
+    left: -23px;
+    top: 429px;
+  }
+
+  100% {
+    left: -23px;
+    top: 429px;
+  }
+}
+
+@keyframes blob2 {
+  0% {
+    left: -44px;
+    top: -365px;
+  }
+
+  33% {
+    left: 274px;
+    top: 64px;
+  }
+
+  66% {
+    left: 984px;
+    top: -340px;
+  }
+
+  100% {
+    left: -44px;
+    top: -365px;
+  }
+}
+
+@keyframes blob3 {
+  0% {
+    left: 719px;
+    top: 120px;
+  }
+
+  33% {
+    left: 1066px;
+    top: -153px;
+  }
+
+  66% {
+    left: -162px;
+    top: -131px;
+  }
+
+  100% {
+    left: 719px;
+    top: 120px;
+  }
+}
+
+@keyframes blob4 {
+  0% {
+    left: 1125px;
+    top: -305px;
+  }
+
+  33% {
+    left: 629px;
+    top: -392px;
+  }
+
+  66% {
+    left: 921px;
+    top: 348px;
+  }
+
+  100% {
+    left: 1125px;
+    top: -305px;
+  }
 }
