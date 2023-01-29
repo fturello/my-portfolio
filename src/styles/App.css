@@ -1,40 +1,7 @@
 body {
-  background-color: #24144c;
+  background-color: #150c2d;
   color: rgba(255, 255, 255, 0.87);
   overflow: hidden;
-}
-
-.background {
-  filter: blur(100px);
-  -webkit-filter: blur(100px);
-}
-
-.blob {
-  position: absolute;
-}
-
-.blob1 {
-  left: -23px;
-  top: 429px;
-  animation: blob1 10s infinite;
-}
-
-.blob2 {
-  left: -44px;
-  top: -365px;
-  animation: blob2 10s infinite;
-}
-
-.blob3 {
-  left: 719px;
-  top: 120px;
-  animation: blob3 10s infinite;
-}
-
-.blob4 {
-  left: 1125px;
-  top: -305px;
-  animation: blob4 10s infinite;
 }
 
 .container {
@@ -42,16 +9,11 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  /* height: 624px;
-  width: 1272px; */
   display: grid;
-  grid-template-columns: repeat(4, 300px);
+  grid-template-columns: repeat(2, 300px);
   grid-template-rows: repeat(2, 300px);
   grid-column-gap: 28px;
   grid-row-gap: 24px;
-  /* justify-content: center; */
-  /* justify-items: center; */
-  /* margin: 0 auto; */
 }
 
 .big-card {
@@ -74,110 +36,76 @@ body {
   -webkit-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 10px 10px 22px 0px rgba(0, 0, 0, 0.25);
-  font-size: 38px;
-  font-weight: 300;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
 }
 
 .title-card {
   grid-column: span 2;
 }
 
-.big-card:hover,
-.about-card:hover,
-.cv-card:hover,
-.projects-card:hover,
-.contact-card:hover {
-  cursor: pointer;
+.card.expanded {
+  margin-top: 19.5rem;
+  transform: translate(-50%, -50%);
+  height: 650px;
+  width: 1300px;
+  background-color: #0e081e;
+}
+
+.img.expanded {
+  display: none;
+}
+
+.about.expanded {
+  display: none;
+}
+
+.not-displayed {
+  display: none;
+}
+
+.displayed {
+  display: block;
+  text-align: justify;
+  margin: 5rem;
+  font-size: 36px;
+  line-height: 50px;
 }
 
 .name {
-  font-size: 48px;
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
-@keyframes blob1 {
-  0% {
-    left: -23px;
-    top: 429px;
-  }
-
-  33% {
-    left: -68px;
-    top: -46px;
-  }
-
-  66% {
-    left: -23px;
-    top: 429px;
-  }
-
-  100% {
-    left: -23px;
-    top: 429px;
-  }
+.desc {
+  margin-top: 1rem;
+  font-size: 32px;
+  font-weight: 200;
+  letter-spacing: 1px;
 }
 
-@keyframes blob2 {
-  0% {
-    left: -44px;
-    top: -365px;
-  }
-
-  33% {
-    left: 274px;
-    top: 64px;
-  }
-
-  66% {
-    left: 984px;
-    top: -340px;
-  }
-
-  100% {
-    left: -44px;
-    top: -365px;
-  }
+.activity.desc {
+  margin: 0;
 }
 
-@keyframes blob3 {
-  0% {
-    left: 719px;
-    top: 120px;
-  }
-
-  33% {
-    left: 1066px;
-    top: -153px;
-  }
-
-  66% {
-    left: -162px;
-    top: -131px;
-  }
-
-  100% {
-    left: 719px;
-    top: 120px;
-  }
+.cv-card {
+  text-decoration: none;
+  color: inherit;
 }
 
-@keyframes blob4 {
-  0% {
-    left: 1125px;
-    top: -305px;
-  }
+/* @media screen and (min-width: 700px) {
 
-  33% {
-    left: 629px;
-    top: -392px;
-  }
+} */
 
-  66% {
-    left: 921px;
-    top: 348px;
-  }
-
-  100% {
-    left: 1125px;
-    top: -305px;
+@media screen and (min-width: 1300px) {
+  .container {
+    grid-template-columns: repeat(4, 300px);
   }
 }
