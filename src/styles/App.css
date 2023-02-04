@@ -50,34 +50,6 @@ body {
   grid-column: span 2;
 }
 
-.card.expanded {
-  margin-top: 19.5rem;
-  transform: translate(-50%, -50%);
-  height: 650px;
-  width: 1300px;
-  background-color: #0e081e;
-}
-
-.img.expanded {
-  display: none;
-}
-
-.about.expanded {
-  display: none;
-}
-
-.not-displayed {
-  display: none;
-}
-
-.displayed {
-  display: block;
-  text-align: justify;
-  margin: 5rem;
-  font-size: 36px;
-  line-height: 50px;
-}
-
 .name {
   font-size: 42px;
   font-weight: 400;
@@ -91,18 +63,159 @@ body {
   letter-spacing: 1px;
 }
 
-.activity.desc {
-  margin: 0;
-}
-
 .cv-card {
   text-decoration: none;
   color: inherit;
 }
 
-/* @media screen and (min-width: 700px) {
+.skills-card {
+  display: flex;
+  flex-direction: row;
+}
 
-} */
+.hide-content,
+.img.expanded,
+.desc.expanded,
+.about.expanded {
+  display: none;
+}
+
+.contact-img {
+  position: absolute;
+  top: 12%;
+}
+
+.card.expanded {
+  margin-top: 19.5rem;
+  transform: translate(-50%, -50%);
+  height: 650px;
+  width: 1300px;
+  background-color: #0e081e;
+}
+
+.text-displayed {
+  display: block;
+  text-align: justify;
+  margin: 5rem;
+  font-size: 36px;
+  line-height: 50px;
+}
+
+.expanded.projects-expanded {
+  margin-top: auto;
+  margin-left: 40rem;
+  height: 650px;
+  width: 1300px;
+}
+
+.project-small-cards {
+  display: flex;
+  align-items: flex-start;
+  /* height: 100%;
+  width: 100%; */
+}
+
+.project-card {
+  display: flex;
+  position: absolute;
+  left: 30%;
+  top: 46.5%;
+  transform: translate(-50%, -50%);
+  margin: 2rem;
+  height: 23rem;
+  width: 37rem;
+  /* border: 2px solid #f7f7f7; */
+  border-radius: 1rem;
+}
+
+.project-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  filter: drop-shadow(8px 8px 14px rgba(0, 0, 0, 0.25));
+}
+
+.project-desc {
+  position: absolute;
+  left: 20%;
+  right: 0%;
+  transform: translate(110%, 5%);
+  /* top: 0%; */
+  /* bottom: 14.55%; */
+  text-align: justify;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.expanded.contact-expanded {
+  margin-top: auto;
+  margin-left: 19.5rem;
+}
+
+.form {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  color: rgba(0, 0, 0, 0);
+  border-radius: 2rem;
+  grid-template-columns: repeat(2, 350px);
+  grid-column-gap: 40px;
+  grid-row-gap: 20px;
+}
+
+.first-name,
+.last-name,
+.email,
+.phone {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-radius: 1.3rem;
+  height: 2.5rem;
+}
+
+.first-name::placeholder,
+.last-name::placeholder,
+.email::placeholder,
+.phone::placeholder {
+  padding: 0.75rem;
+  font-size: 20px;
+}
+
+.message {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-radius: 1.3rem;
+  height: 10rem;
+  grid-column: span 2;
+}
+
+.message::placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.75rem;
+  font-size: 20px;
+  /* text-align: left;
+  vertical-align: top; */
+}
+
+.expanded.skills-expanded {
+  margin-top: auto;
+}
+
+.skills-img {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-column-gap: 40px;
+  grid-row-gap: 20px;
+  text-align: center;
+}
+
+.activity.desc {
+  margin: 0;
+}
 
 @media screen and (min-width: 1300px) {
   .container {
