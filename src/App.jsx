@@ -9,7 +9,7 @@ import contact from "./assets/icons/contact.svg";
 import skills from "./assets/icons/skills.svg";
 
 import react from "./assets/skills/react.svg";
-import db from "./assets/skills/db.svg";
+import sql from "./assets/skills/sql.svg";
 import back from "./assets/skills/back.svg";
 import git from "./assets/skills/workflow.svg";
 import js from "./assets/skills/js.svg";
@@ -71,6 +71,7 @@ function App() {
 				<p className={`about desc ${isAboutExpanded ? "expanded" : ""}`}>
 					About me
 				</p>
+				<a href='#' class={isAboutExpanded ? "close" : ""}></a>
 				<p className={isAboutDisplayed ? "text-displayed" : "hide-content"}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 					eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
@@ -110,6 +111,7 @@ function App() {
 				<p className={`desc ${isProjectsExpanded ? "expanded" : ""}`}>
 					Projects
 				</p>
+				<a href='#' class={isProjectsExpanded ? "close" : ""}></a>
 				<div
 					className={`project-small-cards ${
 						isProjectsExpanded ? "expanded" : ""
@@ -138,6 +140,7 @@ function App() {
 					</div>
 				</div>
 			</div>
+
 			<div
 				className={`contact-card small-card card ${
 					isContactExpanded ? "expanded contact-expanded" : ""
@@ -150,7 +153,11 @@ function App() {
 					className={`img ${isContactExpanded ? "contact-img" : ""}`}
 				/>
 				<p className={`desc ${isContactExpanded ? "expanded" : ""}`}>Contact</p>
-				<form className={isContactExpanded ? "form" : "hide-content"}>
+				<a href='#' class={isContactExpanded ? "close" : ""}></a>
+				<form
+					className={isContactExpanded ? "form" : "hide-content"}
+					onClick={(e) => e.stopPropagation()}
+				>
 					<input
 						type='text'
 						name='first-name'
@@ -192,6 +199,7 @@ function App() {
 			>
 				{/* <img src={skills} alt='my skills' /> */}
 				{/* <p className='desc'>Skills</p> */}
+				<a href='#' class={isSkillsExpanded ? "close" : ""}></a>
 				<div className={isSkillsExpanded ? "skills-img" : "hide-content"}>
 					<div>
 						<img src={react} alt='my skills' />
@@ -201,7 +209,7 @@ function App() {
 						</p>
 					</div>
 					<div>
-						<img src={db} alt='my skills' />
+						<img src={sql} alt='my skills' />
 						<p>
 							SQL <br />
 							NoSQL

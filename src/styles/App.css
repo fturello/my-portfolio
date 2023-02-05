@@ -46,6 +46,37 @@ body {
   cursor: pointer;
 }
 
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 34px;
+  width: 3px;
+  background-color: #ffffff;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
 .title-card {
   grid-column: span 2;
 }
@@ -106,13 +137,13 @@ body {
   margin-left: 40rem;
   height: 650px;
   width: 1300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .project-small-cards {
   display: flex;
   align-items: flex-start;
-  /* height: 100%;
-  width: 100%; */
 }
 
 .project-card {
@@ -127,6 +158,10 @@ body {
   /* border: 2px solid #f7f7f7; */
   border-radius: 1rem;
 }
+
+/* .scroll-content {
+  text-align: center;
+} */
 
 .project-img {
   height: 100%;
@@ -158,7 +193,6 @@ body {
   top: 65%;
   transform: translate(-50%, -50%);
   display: grid;
-  color: rgba(0, 0, 0, 0);
   border-radius: 2rem;
   grid-template-columns: repeat(2, 350px);
   grid-column-gap: 40px;
@@ -170,35 +204,37 @@ body {
 .email,
 .phone {
   background-color: rgba(0, 0, 0, 0);
-  border: 2px solid rgba(255, 255, 255, 0.82);
+  border: 2px solid #fff;
   border-radius: 1.3rem;
   height: 2.5rem;
+  color: #fff;
+  padding-left: 1rem;
+  font-size: 20px;
 }
+
 
 .first-name::placeholder,
 .last-name::placeholder,
 .email::placeholder,
 .phone::placeholder {
-  padding: 0.75rem;
-  font-size: 20px;
+  padding: 0.15rem;
 }
 
 .message {
   background-color: rgba(0, 0, 0, 0);
-  border: 2px solid rgba(255, 255, 255, 0.82);
+  border: 2px solid #fff;
   border-radius: 1.3rem;
   height: 10rem;
   grid-column: span 2;
+  font-size: 20px;
+  color: #fff;
 }
 
 .message::placeholder {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0.75rem;
-  font-size: 20px;
-  /* text-align: left;
-  vertical-align: top; */
+  padding: 1rem;
 }
 
 .expanded.skills-expanded {
@@ -209,7 +245,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 200px);
   grid-column-gap: 40px;
-  grid-row-gap: 20px;
+  grid-row-gap: 70px;
   text-align: center;
 }
 
