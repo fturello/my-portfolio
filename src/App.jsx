@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 
 import "./styles/App.css";
 
 import about from "./assets/icons/about.svg";
 import download from "./assets/icons/download.svg";
-import projects from "./assets/icons/projects.svg";
+import projects from "./assets/icons/projects.png";
 import contact from "./assets/icons/contact.svg";
 import skills from "./assets/icons/skills.svg";
 
 import react from "./assets/skills/react.svg";
-import sql from "./assets/skills/sql.svg";
+import sql from "./assets/skills/sql.png";
 import back from "./assets/skills/back.svg";
 import git from "./assets/skills/workflow.svg";
 import js from "./assets/skills/js.svg";
@@ -17,7 +17,10 @@ import html from "./assets/skills/html.svg";
 import css from "./assets/skills/css.svg";
 import bootstrap from "./assets/skills/bootstrap.svg";
 
-import ice from "./assets/ice.jpg";
+import github from "./assets/github.png";
+import dyschronicles from "./assets/dyschronicles.png";
+import galaxyGetaways from "./assets/galaxy_getaways.png";
+import stickApp from "./assets/stickapp.png";
 
 function App() {
 	const [downloadUrl, setDownloadUrl] = useState(null);
@@ -51,6 +54,14 @@ function App() {
 		setIsSkillsExpanded(!isSkillsExpanded);
 	};
 
+	const cardRef = useRef(null);
+
+	useLayoutEffect(() => {
+		isProjectsDisplayed
+			? (cardRef.current.style.height = "100%")
+			: (cardRef.current.style.height = "auto");
+	}, [isProjectsExpanded]);
+
 	return (
 		<div className='container'>
 			<div className='title-card big-card card'>
@@ -66,24 +77,23 @@ function App() {
 				<img
 					src={about}
 					alt='about me'
-					className={`img ${isAboutExpanded ? "expanded" : ""}`}
+					className={`img ${isAboutExpanded ? "about-img" : ""}`}
 				/>
 				<p className={`about desc ${isAboutExpanded ? "expanded" : ""}`}>
 					About me
 				</p>
-				<a href='#' class={isAboutExpanded ? "close" : ""}></a>
-				<p className={isAboutDisplayed ? "text-displayed" : "hide-content"}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
-					ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Turpis
-					in eu mi bibendum neque. Praesent tristique magna sit amet purus
-					gravida quis. Et magnis dis parturient montes. Elementum eu facilisis
-					sed odio morbi quis. Nulla aliquet porttitor lacus luctus accumsan
-					tortor posuere. Nisl stincidunt eget nullam non nisi est. Aliquam
-					etiam erat velit scelerisque. Amet volutpat consequat mauris nunc
-					congue nisi. At tempor commodo ullamcorper a lacus vestibulum sed arcu
-					non. Amet mauris commodo quis imperdiet massa tincidunt. Pellentesque
-					habitant a morbi tristique.
+				<a href='#' className={isAboutExpanded ? "close" : ""}></a>
+				<p
+					className={isAboutDisplayed ? "text-displayed" : "hide-content"}
+					onClick={(e) => e.stopPropagation()}
+				>
+					Passionné d'informatique et de nouvelles technologies depuis toujours,
+					j'ai entamé en novembre 2022 une reconversion dans le développement
+					Web et Web Mobile full-stack. <br /> Adepte du code propre, du
+					principe DRY et très intéressé par les problématiques de performances,
+					je suis toujours à la recherche de nouvelles ressources et
+					optimisations dans le code. <br /> Je suis actuellement à la recherche
+					d'un stage dans le secteur du développement Web/Web-mobile.
 				</p>
 			</div>
 			<div>
@@ -113,7 +123,8 @@ function App() {
 				</p>
 				<a href='#' class={isProjectsExpanded ? "close" : ""}></a>
 				<div
-					className={`project-small-cards ${
+					ref={cardRef}
+					className={`project-container ${
 						isProjectsExpanded ? "expanded" : ""
 					}`}
 				>
@@ -121,26 +132,116 @@ function App() {
 						className={`${
 							isProjectsDisplayed ? "project-card" : "hide-content"
 						}`}
+						onClick={(e) => e.stopPropagation()}
 					>
-						<img src={ice} alt='ice' className='project-img' />
-						<p className='project-desc'>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
-							ultricies lacus sed turpis tincidunt id aliquet risus feugiat.
-							Turpis in eu mi bibendum neque. Praesent tristique magna sit amet
-							purus gravida quis. Et magnis dis parturient montes. Elementum eu
-							facilisis sed odio morbi quis. Nulla aliquet porttitor lacus
-							luctus accumsan tortor posuere. Nisl stincidunt eget nullam non
-							nisi est. Aliquam etiam erat velit scelerisque. Amet de volutpat
-							consequat mauris nunc congue nisi. At tempor commodo ullamcorper a
-							lacus vestibulum sed arcu non. Amet mauris commodo quis imperdiet
-							massa tincidunt. Pellentesque habitant a morbi tristique.
-							Elementum eu facilisis sed odio morbi quis.
-						</p>
+						<img
+							src={dyschronicles}
+							alt='ice'
+							className='project-img'
+							onClick={() =>
+								window.open(
+									"https://github.com/fturello/Code-Chronicles",
+									"_blank"
+								)
+							}
+						/>
+						<div className='project-content'>
+							<h1 className='project-title'>Dyschronicles</h1>
+							<p className='project-desc'>
+								(fevrier 2023) <br />
+								React, SQL
+								<br />
+								<br />
+								Site web réalisé lors d'un hackathon d'une durée de deux jours
+								ayant pour thème le voyage temporel. <br />
+								<br />
+								Le principe du site étant de pouvoir choisir une époque et
+								d'avoir un aperçu de comment cela aurait pu donner
+							</p>
+							<img
+								src={github}
+								alt='github'
+								className='github'
+								onClick={() =>
+									window.open(
+										"https://github.com/fturello/Code-Chronicles",
+										"_blank"
+									)
+								}
+							/>
+						</div>
+					</div>
+					<div
+						className={`${
+							isProjectsDisplayed ? "project-card" : "hide-content"
+						}`}
+						onClick={(e) => e.stopPropagation()}
+					>
+						<img
+							src={galaxyGetaways}
+							alt='ice'
+							className='project-img'
+							onClick={() =>
+								window.open(
+									"https://orbital-code.remote-qbis.wilders.dev/",
+									"_blank"
+								)
+							}
+						/>
+						<div className='project-content'>
+							<h1 className='project-title'>Galaxy Getaways</h1>
+							<p className='project-desc'>
+								(janvier-fevrier 2023) <br />
+								React, SQL
+								<br />
+								<br />
+								Site web d'une agence fictive de voyages spatiaux
+							</p>
+							<img
+								src={github}
+								alt='github'
+								className='github'
+								onClick={() =>
+									window.open(
+										"https://github.com/fturello/Galaxy-Getaways",
+										"_blank"
+									)
+								}
+							/>
+						</div>
+					</div>
+					<div
+						className={`${
+							isProjectsDisplayed ? "project-card" : "hide-content"
+						}`}
+						onClick={(e) => e.stopPropagation()}
+					>
+						<img src={stickApp} alt='ice' className='project-img' />
+						<div className='project-content'>
+							<h1 className='project-title'>StickApp</h1>
+							<p className='project-desc'>
+								(decembre-janvier 2022) <br />
+								React Native, MongoDB
+								<br />
+								<br />
+								Application proposant aux utilisateurs des récompenses en
+								cashback pour l'utilisation de stickers de marques
+							</p>
+							<img
+								src={github}
+								alt='github'
+								className='github'
+								onClick={() =>
+									window.open(
+										"https://github.com/Slim2680/stickapp_backend",
+										"_blank"
+									)
+								}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
-
 			<div
 				className={`contact-card small-card card ${
 					isContactExpanded ? "expanded contact-expanded" : ""
@@ -155,6 +256,8 @@ function App() {
 				<p className={`desc ${isContactExpanded ? "expanded" : ""}`}>Contact</p>
 				<a href='#' class={isContactExpanded ? "close" : ""}></a>
 				<form
+					action='https://formspree.io/f/xvonkprl'
+					method='POST'
 					className={isContactExpanded ? "form" : "hide-content"}
 					onClick={(e) => e.stopPropagation()}
 				>
@@ -171,7 +274,7 @@ function App() {
 						className='last-name'
 					/>
 					<input
-						type='text'
+						type='email'
 						name='email'
 						placeholder='Email'
 						className='email'
@@ -182,25 +285,34 @@ function App() {
 						placeholder='Phone'
 						className='phone'
 					/>
-					<input
+					<textarea
 						type='text'
 						name='message'
 						placeholder='Message'
 						className='message'
 					/>
-					{/* <input type='submit' value='Submit' /> */}
+					<button type='submit' className='btn-send'>
+						Submit
+					</button>
 				</form>
 			</div>
 			<div
 				className={`skills-card big-card card ${
-					isSkillsExpanded ? "expanded skills-expanded" : ""
+					isSkillsExpanded ? "expanded skills-expanded" : "skills-unexpanded"
 				}`}
 				onClick={expandSkills}
 			>
-				{/* <img src={skills} alt='my skills' /> */}
-				{/* <p className='desc'>Skills</p> */}
+				<img
+					src={skills}
+					alt='my skills'
+					className={isSkillsExpanded ? "hide-content" : ""}
+				/>
+				<p className={isSkillsExpanded ? "hide-content" : "desc"}>Skills</p>
 				<a href='#' class={isSkillsExpanded ? "close" : ""}></a>
-				<div className={isSkillsExpanded ? "skills-img" : "hide-content"}>
+				<div
+					className={isSkillsExpanded ? "skills-img" : "hide-content"}
+					onClick={(e) => e.stopPropagation()}
+				>
 					<div>
 						<img src={react} alt='my skills' />
 						<p>
@@ -245,6 +357,7 @@ function App() {
 						<img src={bootstrap} alt='my skills' />
 						<p>Bootstrap</p>
 					</div>
+					{/* <p className='more'>... and more !</p> */}
 				</div>
 			</div>
 		</div>
