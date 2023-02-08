@@ -1,0 +1,14 @@
+.about-img {
+  position: absolute;
+  top: 8%;
+  z-index: 0;
+}
+
+.text-displayed {
+  display: block;
+  text-align: justify;
+  margin: 5rem;
+  padding-top: 10rem;
+  font-size: 33px;
+  line-height: 50px;
+}
